@@ -30,3 +30,18 @@ function updateClock() {
 }
 setInterval(updateClock, 1000);
 updateClock();
+
+let users = [];
+document.getElementById("loginBtn").addEventListener("click", function() {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    if (username === 'admin' && password === 'admin') {
+        window.location.href = 'table.html';
+    } else {
+        alert('Invalid information!');
+    }
+
+    users.push({ username, password });
+    console.log(users);
+});
